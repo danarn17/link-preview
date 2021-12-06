@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 const chromium = require("chrome-aws-lambda");
 const puppeteer = require("puppeteer-core");
+const devices = puppeteer.devices;
+const ip11pro = devices['iPhone 11 Pro Max landscape'];
 
 exports.handler = async function (event, context) {
   // parse body of POSY request to valid object and
@@ -16,13 +18,15 @@ exports.handler = async function (event, context) {
 
   // open new page in browser
   const page = await browser.newPage();
+  await page.emulate(ip11pro);
 
   // set the viewport of the page
-  await page.setViewport({
-    width: 2048,
-    height: 1024,
-    deviceScaleFactor: 1,
-  });
+//  await page.setViewport({
+//    width: 768,
+//    height: 425,
+//    deviceScaleFactor: 1,
+//  });
+
 
   // set the prefers-color-scheme to dark
   await page.emulateMediaFeatures([
