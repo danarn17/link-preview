@@ -1,11 +1,16 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import { createStore } from 'vuex'
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+export default createStore({
+  state: {
+    wsEndpoint: ''
+  },
+  mutations: {
+    updateWsEndpoint(state, payload){
+      state.wsEndpoint = payload
+    }
+  },
+  actions: {
+  },
+  modules: {
+  }
+})
