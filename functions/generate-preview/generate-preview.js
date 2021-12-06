@@ -2,7 +2,7 @@
 const chromium = require("chrome-aws-lambda");
 const puppeteer = require("puppeteer-core");
 const devices = puppeteer.devices;
-const ip11pro = devices['iPhone 11 Pro Max landscape'];
+const ip11pro = devices['iPhone 11 Pro Max'];
 
 exports.handler = async function (event, context) {
   // parse body of POSY request to valid object and
